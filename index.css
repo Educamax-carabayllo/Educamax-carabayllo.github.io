@@ -1,0 +1,376 @@
+:root {
+    --color-primario: #1f21cc;
+    --color-texto: #0d1f3c;
+    --color-fondo-general: #ffffff;
+    --color-fondo-alterno: #f0f4ff;
+    --tamaño-titulo-seccion: 2.3rem;
+    --fuente-titulo: 'Cormorant Garamond', serif;
+    --fuente-cuerpo: 'DM Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-fondo-general);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+/* ============================================================
+   NAVEGACIÓN
+   ============================================================ */
+.navegador {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 4rem;
+    border-bottom: 1px solid #d0d9e8;
+    background-color: #f4f6f9;
+}
+
+.logo img {
+
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+.textonav ul {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.textonav a {
+    text-decoration: none;
+    color: #6278a0;
+    font-size: 0.85rem;
+    font-family: var(--fuente-cuerpo);
+    font-weight: 400;
+}
+
+.textonav a::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: var(--color-texto);
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.textonav a:hover::after {
+    width: 100%;
+}
+
+.textonav a.activo {
+    color: var(--color-texto);
+}
+
+.textonav a.activo::after {
+    width: 100%;
+}
+
+/* ============================================================
+   titulo:educamax
+   ============================================================ */
+.titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 10px;
+    background-color: var(--color-fondo-alterno);
+
+
+}
+
+.titulo h1 {
+    color: var(--color-primario);
+    font-family: var(--fuente-titulo);
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+
+}
+
+.titulo p {
+    text-align: center;
+    color: var(--color-texto);
+    padding: 10px;
+    font-family: var(--fuente-cuerpo);
+}
+
+
+.btn-primario {
+    margin-top: 30px;
+    text-decoration: none;
+    padding: 10px 30px;
+    border: none;
+    color: rgb(255, 255, 255);
+    background-color: #0d1f3c;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primario:hover {
+    background: transparent;
+    color: var(--color-texto);
+    border: 1px solid var(--color-texto);
+}
+
+
+/* ============================================================
+   seccion: nosotros
+   ============================================================ */
+.nosotros h2 {
+    color: var(--color-primario);
+    font-size: var(--tamaño-titulo-seccion);
+    text-align: center;
+    font-family: var(--fuente-titulo);
+    margin-top: 3%;
+}
+
+.contenido-nosotros {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15%;
+    padding: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.imagen {
+    flex: 1;
+}
+
+.imagen img {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.texto {
+    flex: 1;
+    font-family: 'DM Sans', sans-serif;
+}
+
+
+
+.texto p {
+    font-size: 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--color-texto);
+
+}
+
+@media (max-width:768px) {
+    .contenido-nosotros {
+        flex-direction: column;
+        margin-top: auto;
+    }
+
+    .texto {
+        margin-top: 40px;
+    }
+
+}
+
+/* ============================================================
+   cartas
+   ============================================================ */
+#servicios {
+    padding: 60px 40px;
+    text-align: center;
+    background-color: var(--color-fondo-alterno);
+
+}
+
+#servicios h2 {
+    color: var(--color-primario);
+    font-size: var(--tamaño-titulo-seccion);
+    font-family: var(--fuente-titulo);
+}
+
+.cards {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: var(--color-fondo-general);
+    width: 300px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.671);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card h3 {
+    color: var(--color-primario);
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: var(--color-texto);
+    font-size: 0.85rem;
+}
+
+/* ============================================================
+   profesores
+   ============================================================ */
+#docentes {
+
+    text-align: center;
+    padding: 60px 40px;
+}
+
+#docentes h2 {
+    color: var(--color-primario);
+    font-size: var(--tamaño-titulo-seccion);
+    font-family: var(--fuente-titulo);
+}
+
+.cuadros {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2%;
+    gap: 10%;
+}
+
+.profe {
+    text-align: center;
+    width: 300px;
+}
+
+.profe h3 {
+    border-radius: 20px;
+    font-family: var(--fuente-titulo);
+    margin-top: 30px;
+}
+
+.profe img {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin-top: 30px;
+}
+
+.profe p {
+    color: var(--color-texto);
+    margin-top: 15px;
+    text-align: center;
+    font-family: var(--fuente-cuerpo);
+}
+
+/* ============================================================
+   call action
+   ============================================================ */
+
+.call-action {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+    background-color: var(--color-fondo-alterno);
+    padding: 50PX;
+}
+
+.llamado {
+    background-color: var(--color-fondo-general);
+    border-radius: 20px;
+}
+
+.llamado h2 {
+    color: var(--color-primario);
+    font-size: 4rem;
+    font-family: var(--fuente-titulo);
+}
+
+.llamado p {
+    color: var(--color-texto);
+    font-family: var(--fuente-cuerpo);
+}
+
+/* ============================================================
+   footer
+   ============================================================ */
+
+footer {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    background-color: #0d1f3c;
+    padding: 30px;
+
+}
+
+.colum {
+    margin: 10px;
+}
+
+.colum h4 {
+    margin-bottom: 10px;
+    color: var(--color-fondo-alterno);
+}
+
+.colum a {
+    text-decoration: none;
+    color: white;
+}
+
+.colum ul {
+    list-style: none;
+}
+
+.colum p {
+    color: white;
+}
+
+
+
+/* ============================================================
+   responsive
+   ============================================================ */
+@media(max-width:768px) {
+    .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+
+    }
+
+    .navegador {
+        flex-direction: column;
+
+    }
+
+    .textonav ul {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+        gap: 1.5rem;
+    }
+
+    .cuadros {
+        flex-direction: column;
+    }
+
+}

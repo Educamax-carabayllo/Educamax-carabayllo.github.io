@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctanos</title>
+    <link rel="stylesheet" href="contactanos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navegador">
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <div class="textonav">
+            <ul>
+                <li><a href="index.html">Nosotros</a></li>
+                <li><a href="contactanos.html" class="activo">Contáctanos</a></li>
+                <li><a href="">Nuestros servicios</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="pagina-contacto">
+
+        <!-- Encabezado -->
+        <header class="encabezado">
+            <p class="subtitulo-encabezado">Estamos aquí para ti</p>
+            <h1 class="titulo-encabezado">Encuéntranos</h1>
+        </header>
+
+        <!-- Contenido principal -->
+        <section class="contenido">
+
+            <!-- Información de contacto -->
+            <div class="info-contacto">
+
+                <div class="bloque-info">
+                    <span class="etiqueta">Dirección</span>
+                    <p>Jiron San Carlos<br>Lima, CARABAYLLO</p>
+                </div>
+
+                <div class="divisor"></div>
+
+                <div class="bloque-info">
+                    <span class="etiqueta">Teléfono</span>
+                    <p>+51 929 795 655</p>
+                </div>
+
+                <div class="divisor"></div>
+
+                <div class="bloque-info">
+                    <span class="etiqueta">Correo</span>
+                    <p>hola@tuempresa.com</p>
+                </div>
+
+                <div class="divisor"></div>
+
+                <div class="bloque-info">
+                    <span class="etiqueta">Horario</span>
+                    <p>Lunes — Viernes<br>9:00 am — 4:00 pm</p>
+                </div>
+
+                <!-- Botón Google Maps -->
+                <a
+                    href="https://maps.google.com/?q=Lima,Peru"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-mapa"
+                >
+                    <span>Ver en Google Maps</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                    </svg>
+                </a>
+
+            </div>
+
+            <!-- Mapa embebido -->
+            <div class="contenedor-mapa">
+                <!--
+                    INSTRUCCIONES PARA EL MAPA:
+                    1. Ve a Google Maps y busca tu dirección exacta.
+                    2. Haz clic en "Compartir" > "Insertar un mapa".
+                    3. Copia el <iframe> que te da Google y reemplaza el de abajo.
+                    4. También actualiza el href del botón "Ver en Google Maps" arriba.
+                -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251.21876622950296!2d-77.06908542511191!3d-11.830166962842345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d6f01df839fb%3A0x2737d0d7b92cffe0!2sVirgen%20De%20Las%20Nieves!5e0!3m2!1ses!2spe!4v1778360580335!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Nuestra ubicación en Google Maps"
+                ></iframe>
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
