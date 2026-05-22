@@ -1,40 +1,78 @@
+/* ============================================================
+   VARIABLES GLOBALES UNIFICADAS (MINIMALISTA Y MATE)
+   ============================================================ */
 :root {
-    --color-primario: #1f21cc;
-    --color-texto: #0d1f3c;
-    --color-fondo-general: #ffffff;
-    --color-fondo-alterno: #f0f4ff;
-    --tamaño-titulo-seccion: 2.3rem;
-    --fuente-titulo: 'Cormorant Garamond', serif;
-    --fuente-cuerpo: 'DM Sans', sans-serif;
+    --azul-900: #0B1D3F;
+    --azul-800: #102B5C;
+    --azul-700: #1C3F7A;
+    --azul-600: #1C4ED8;
+    --azul-400: #3B82F6;
+    --azul-200: #BFDBFE;
+    --azul-100: #DBEAFE;
+    --azul-50:  #EFF6FF;
+    --blanco:   #FFFFFF;
+    --fondo:    #F7F9FD;
+    --borde:    #E2E8F0;
+    --texto:    #1E293B;
+    --medio:    #64748B;
+    --suave:    #94A3B8;
+    --ft: 'DM Serif Display', serif;
+    --fb: 'DM Sans', sans-serif;
 }
 
-* {
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    background-color: var(--color-fondo-general);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+html {
+    scroll-behavior: smooth;
+}
 
+body {
+    font-family: var(--fb);
+    background-color: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+    padding-top: 85px; /* Compensa nav fijo */
+}
+
+section {
+    padding: 80px 20px;
+}
+
+h2 {
+    color: var(--azul-900);
+    font-size: 2.5rem;
+    font-family: var(--ft);
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 /* ============================================================
-   NAVEGACIÓN
+   NAVEGACIÓN UNIFICADA
    ============================================================ */
 .navegador {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.25rem 4rem;
-    border-bottom: 1px solid #d0d9e8;
-    background-color: #f4f6f9;
+    padding: 1rem 4rem;
+    background-color: var(--blanco);
+    border-bottom: 1px solid var(--borde);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .logo img {
-
-    height: 50px;
+    height: 55px;
     width: auto;
     display: block;
 }
@@ -47,99 +85,145 @@ body {
 
 .textonav a {
     text-decoration: none;
-    color: #6278a0;
+    color: var(--texto);
     font-size: 0.85rem;
-    font-family: var(--fuente-cuerpo);
-    font-weight: 400;
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .textonav a::after {
     content: '';
     display: block;
-    height: 1px;
-    background-color: var(--color-texto);
+    height: 2px;
+    background-color: var(--azul-600);
     width: 0;
     transition: width 0.3s ease;
+    margin-top: 4px;
 }
 
-.textonav a:hover::after {
-    width: 100%;
-}
-
-.textonav a.activo {
-    color: var(--color-texto);
-}
-
+.textonav a:hover::after,
 .textonav a.activo::after {
     width: 100%;
 }
 
 /* ============================================================
-   titulo:educamax
+   HERO / INICIO
    ============================================================ */
-.titulo {
+.page-hero {
+    padding: 4rem 0 6rem 0;
+    background: var(--blanco);
+    border-bottom: 1px solid var(--borde);
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    background: var(--azul-50);
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 0;
+}
+
+.contenedor-completo {
+    position: relative;
+    z-index: 1;
+}
+
+.contenedor-inicial {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
-    padding: 40px 10px;
-    background-color: var(--color-fondo-alterno);
-
-
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
-.titulo h1 {
-    color: var(--color-primario);
-    font-family: var(--fuente-titulo);
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 3rem;
-
+.titulo-inicial {
+    flex: 1.2;
 }
 
-.titulo p {
-    text-align: center;
-    color: var(--color-texto);
-    padding: 10px;
-    font-family: var(--fuente-cuerpo);
+.etiqueta {
+    font-size: 0.80rem;
+    font-weight: 700;
+    color: var(--azul-600);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
 }
 
+.titulo-inicial h1 {
+    font-family: var(--ft);
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    color: var(--azul-900);
+    line-height: 1.1;
+    margin: 15px 0 25px 0;
+    font-weight: 400;
+}
 
-.btn-primario {
-    margin-top: 30px;
+.titulo-inicial h1 em {
+    color: var(--azul-600);
+    font-style: italic;
+}
+
+.descripcion {
+    font-size: 1.05rem;
+    color: var(--medio);
+    margin-bottom: 35px;
+    max-width: 90%;
+    line-height: 1.7;
+}
+
+.descripcion strong {
+    color: var(--texto);
+}
+
+.btn-flat {
+    display: inline-block;
+    background: var(--azul-600);
+    color: var(--blanco);
+    font-family: var(--fb);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 1rem 2rem;
     text-decoration: none;
-    padding: 10px 30px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
     border: none;
-    color: rgb(255, 255, 255);
-    background-color: #0d1f3c;
-    cursor: pointer;
-    transition: all 0.3s ease;
 }
 
-.btn-primario:hover {
-    background: transparent;
-    color: var(--color-texto);
-    border: 1px solid var(--color-texto);
+.btn-flat:hover {
+    background: var(--azul-800);
+    color: var(--blanco);
 }
 
+.baner {
+    flex: 1;
+}
+
+.baner img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 1px solid var(--borde);
+}
 
 /* ============================================================
-   seccion: nosotros
+   SECCIÓN: NOSOTROS
    ============================================================ */
-.nosotros h2 {
-    color: var(--color-primario);
-    font-size: var(--tamaño-titulo-seccion);
-    text-align: center;
-    font-family: var(--fuente-titulo);
-    margin-top: 3%;
+.nosotros {
+    background-color: var(--fondo);
 }
 
 .contenido-nosotros {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 15%;
-    padding: 50px;
+    gap: 60px;
     max-width: 1100px;
     margin: 0 auto;
 }
@@ -150,227 +234,403 @@ body {
 
 .imagen img {
     width: 100%;
-    height: auto;
-    max-height: 450px;
-    object-fit: cover;
-    border-radius: 10px;
+    border-radius: 12px;
+    border: 1px solid var(--borde);
 }
 
 .texto {
     flex: 1;
-    font-family: 'DM Sans', sans-serif;
 }
-
-
 
 .texto p {
-    font-size: 1rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem;
-    color: var(--color-texto);
-
+    font-size: 1.05rem;
+    color: var(--medio);
 }
 
-@media (max-width:768px) {
-    .contenido-nosotros {
-        flex-direction: column;
-        margin-top: auto;
-    }
+.lista-beneficios {
+    margin-top: 25px;
+    list-style: none;
+}
 
-    .texto {
-        margin-top: 40px;
-    }
+.lista-beneficios li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 25px;
+    color: var(--texto);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
 
+.lista-beneficios li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    background: var(--azul-400);
+    border-radius: 50%;
 }
 
 /* ============================================================
-   cartas
+   SECCIÓN: SERVICIOS (TARJETAS MINIMALISTAS)
    ============================================================ */
 #servicios {
-    padding: 60px 40px;
-    text-align: center;
-    background-color: var(--color-fondo-alterno);
-
-}
-
-#servicios h2 {
-    color: var(--color-primario);
-    font-size: var(--tamaño-titulo-seccion);
-    font-family: var(--fuente-titulo);
+    background-color: var(--blanco);
+    border-top: 1px solid var(--borde);
+    border-bottom: 1px solid var(--borde);
 }
 
 .cards {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    justify-content: center;
-    margin-top: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .card {
-    background-color: var(--color-fondo-general);
-    width: 300px;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.671);
-    transition: transform 0.3s;
+    background-color: var(--fondo);
+    padding: 40px 30px;
+    border-radius: 8px;
+    border: 1px solid var(--borde);
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
+    border-color: var(--azul-200);
 }
 
 .card h3 {
-    color: var(--color-primario);
+    font-family: var(--ft);
+    font-size: 1.8rem;
+    color: var(--azul-900);
     margin-bottom: 15px;
+    font-weight: 400;
 }
 
 .card p {
-    color: var(--color-texto);
-    font-size: 0.85rem;
+    color: var(--medio);
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 /* ============================================================
-   profesores
+   SECCIÓN: PROFESORES
    ============================================================ */
-#docentes {
-
-    text-align: center;
-    padding: 60px 40px;
-}
-
-#docentes h2 {
-    color: var(--color-primario);
-    font-size: var(--tamaño-titulo-seccion);
-    font-family: var(--fuente-titulo);
-}
-
 .cuadros {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin-top: 2%;
-    gap: 10%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .profe {
-    text-align: center;
-    width: 300px;
+    display: flex;
+    align-items: center;
+    background: var(--blanco);
+    border-radius: 8px;
+    padding: 25px;
+    border: 1px solid var(--borde);
+    transition: transform 0.3s ease;
 }
 
-.profe h3 {
-    border-radius: 20px;
-    font-family: var(--fuente-titulo);
-    margin-top: 30px;
+.profe:hover {
+    transform: translateY(-3px);
+    border-color: var(--azul-200);
 }
 
 .profe img {
     border-radius: 50%;
-    width: 300px;
-    height: 300px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
-    margin-top: 30px;
+    margin-right: 25px;
+    border: 1px solid var(--borde);
 }
 
-.profe p {
-    color: var(--color-texto);
-    margin-top: 15px;
-    text-align: center;
-    font-family: var(--fuente-cuerpo);
+.profe-info h3 {
+    font-family: var(--ft);
+    color: var(--azul-900);
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.profe-info h5 {
+    color: var(--azul-600);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.profe-info p {
+    font-size: 0.9rem;
+    color: var(--medio);
+    line-height: 1.5;
 }
 
 /* ============================================================
-   call action
+   ESTADÍSTICAS
    ============================================================ */
-
-.call-action {
-    display: flex;
-    justify-content: center;
+.estadisticas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
+    background: var(--fondo);
+    padding: 60px 40px;
     text-align: center;
-    background-color: var(--color-fondo-alterno);
-    padding: 50PX;
+    border-top: 1px solid var(--borde);
 }
 
 .llamado {
-    background-color: var(--color-fondo-general);
-    border-radius: 20px;
+    padding: 20px;
 }
 
 .llamado h2 {
-    color: var(--color-primario);
-    font-size: 4rem;
-    font-family: var(--fuente-titulo);
+    color: var(--azul-900);
+    font-size: 3.5rem;
+    font-family: var(--ft);
+    margin-bottom: 5px;
 }
 
 .llamado p {
-    color: var(--color-texto);
-    font-family: var(--fuente-cuerpo);
+    color: var(--medio);
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
 }
 
 /* ============================================================
-   footer
+   CTA FINAL UNIFICADO
    ============================================================ */
+.cta {
+    padding: 6rem 4rem;
+    text-align: center;
+    background: var(--blanco);
+    border-top: 1px solid var(--borde);
+}
 
+.cta h2 {
+    font-family: var(--ft);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--azul-900);
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.cta h2 em {
+    font-style: italic;
+    color: var(--azul-600);
+}
+
+.cta p {
+    font-size: 1.1rem;
+    color: var(--medio);
+    margin-bottom: 2.5rem;
+}
+
+/* ============================================================
+   FOOTER UNIFICADO
+   ============================================================ */
 footer {
-    display: flex;
-    gap: 50px;
-    justify-content: center;
-    background-color: #0d1f3c;
-    padding: 30px;
-
+    background: var(--azul-900);
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.colum {
-    margin: 10px;
+.ft-col {
+    padding: 4rem 2rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.colum h4 {
-    margin-bottom: 10px;
-    color: var(--color-fondo-alterno);
+.ft-col:last-child {
+    border-right: none;
 }
 
-.colum a {
-    text-decoration: none;
-    color: white;
+.ft-logo {
+    font-family: var(--ft);
+    font-size: 1.5rem;
+    color: var(--blanco);
+    display: block;
+    margin-bottom: 1rem;
 }
 
-.colum ul {
+.ft-desc {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    max-width: 280px;
+    margin-bottom: 1.5rem;
+}
+
+.ft-desc strong {
+    color: var(--blanco);
+    display: block;
+    margin-top: 10px;
+}
+
+.ft-badge {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+}
+
+.ft-heading {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--blanco);
+    margin-bottom: 1.5rem;
+}
+
+.ft-list {
     list-style: none;
 }
 
-.colum p {
-    color: white;
+.ft-list li {
+    margin-bottom: 10px;
 }
 
+.ft-list a, .ft-col p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.2s;
+}
 
+.ft-list a:hover {
+    color: var(--blanco);
+}
+
+.ft-contact {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.6;
+}
+
+.ft-contact strong {
+    color: var(--blanco);
+    display: block;
+    font-weight: 500;
+}
+
+.ft-bottom {
+    background: #061229;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ft-bottom span {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+}
 
 /* ============================================================
-   responsive
+   BOTÓN FLOTANTE WHATSAPP UNIFICADO
    ============================================================ */
-@media(max-width:768px) {
-    .cards {
-        flex-direction: column;
-    }
+.btn-whatsapp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    z-index: 1000;
+    transition: transform 0.2s ease;
+}
 
-    .card {
-        width: 100%;
+.btn-whatsapp:hover {
+    transform: translateY(-5px);
+}
 
-    }
-
+/* ============================================================
+   MEDIA QUERIES (MÓVILES Y TABLETS)
+   ============================================================ */
+@media (max-width: 900px) {
     .navegador {
+        padding: 1rem 1.5rem;
         flex-direction: column;
-
+        gap: 15px;
+    }
+    
+    body {
+        padding-top: 130px;
     }
 
-    .textonav ul {
+    .page-hero {
+        padding: 3rem 1.5rem;
+    }
+
+    .page-hero::before {
+        width: 100%;
+        clip-path: none;
+        height: 100px;
+        top: auto;
+        bottom: 0;
+    }
+
+    .contenedor-inicial, 
+    .contenido-nosotros {
         flex-direction: column;
         text-align: center;
-        padding: 10px;
-        gap: 1.5rem;
+        padding: 0;
+    }
+
+    .lista-beneficios li {
+        text-align: left;
+        display: inline-block;
+        width: 100%;
+        max-width: 300px;
     }
 
     .cuadros {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
 
+    .profe {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profe img {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .cta {
+        padding: 4rem 1.5rem;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+    }
+
+    .ft-col {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .ft-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
 }
