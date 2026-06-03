@@ -12,9 +12,9 @@
     --azul-50:  #EFF6FF;
     --blanco:   #FFFFFF;
     --fondo:    #F7F9FD;
-    --borde:    #E2E8F0; /* Borde ligeramente más neutro */
-    --texto:    #1E293B; /* Texto oscuro pero no negro puro */
-    --medio:    #64748B; /* Gris azulado para textos secundarios */
+    --borde:    #E2E8F0; 
+    --texto:    #1E293B; 
+    --medio:    #64748B; 
     --suave:    #94A3B8;
     --ft: 'DM Serif Display', serif;
     --fb: 'DM Sans', sans-serif;
@@ -35,7 +35,7 @@ body {
     background: var(--fondo);
     color: var(--texto);
     min-height: 100vh;
-    padding-top: 85px; /* Espacio exacto para el navbar fijo */
+    padding-top: 85px; 
 }
 
 /* ============================================================
@@ -55,10 +55,12 @@ body {
     z-index: 1000;
 }
 
+/* Unificado con el index.css para que no brinque */
 .logo img {
-    height: 55px;
-    width: auto;
+    height: 100px;
+    width: 70px;
     display: block;
+    object-fit: contain;
 }
 
 .textonav ul {
@@ -181,7 +183,6 @@ body {
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover suave, sin brillos exagerados */
 .servicio-card:hover {
     transform: translateY(-4px);
     border-color: var(--azul-200);
@@ -311,6 +312,7 @@ body {
 /* ============================================================
    BOTONES MATE (FLAT DESIGN)
    ============================================================ */
+/* Botón pequeño para las tarjetas */
 .btn-inscribir {
     display: inline-block;
     background: var(--azul-600);
@@ -327,6 +329,27 @@ body {
 }
 
 .btn-inscribir:hover {
+    background: var(--azul-800);
+    color: var(--blanco);
+}
+
+/* Botón grande unificado para el CTA (Faltaba este) */
+.btn-flat {
+    display: inline-block;
+    background: var(--azul-600);
+    color: var(--blanco);
+    font-family: var(--fb);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    border: none;
+}
+
+.btn-flat:hover {
     background: var(--azul-800);
     color: var(--blanco);
 }
@@ -361,7 +384,7 @@ body {
 }
 
 /* ============================================================
-   FOOTER LIMPIO
+   FOOTER UNIFICADO (CON REDES SOCIALES)
    ============================================================ */
 footer {
     background: var(--azul-900);
@@ -451,6 +474,37 @@ footer {
     font-weight: 500;
 }
 
+/* REDES SOCIALES DEL FOOTER */
+.ft-sociales {
+    margin-top: 8px;
+    display: flex;
+    gap: 15px;
+}
+
+.ft-sociales a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.social-fb {
+    color: var(--azul-400) !important;
+}
+
+.social-fb:hover {
+    color: var(--blanco) !important;
+}
+
+.social-tk {
+    color: var(--blanco) !important;
+}
+
+.social-tk:hover {
+    color: var(--azul-400) !important;
+}
+
+/* BARRA INFERIOR DEL FOOTER */
 .ft-bottom {
     background: #061229;
     padding: 1.5rem 2rem;

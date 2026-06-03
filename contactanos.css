@@ -59,8 +59,8 @@ body {
 }
 
 .logo img {
-    height: 55px;
-    width: auto;
+    height: 100px;
+    width: 70px;
     display: block;
 }
 
@@ -272,7 +272,7 @@ body {
 }
 
 /* ============================================================
-   FOOTER UNIFICADO
+   FOOTER UNIFICADO (CON REDES SOCIALES)
    ============================================================ */
 footer {
     background: var(--azul-900);
@@ -362,6 +362,37 @@ footer {
     font-weight: 500;
 }
 
+/* REDES SOCIALES DEL FOOTER */
+.ft-sociales {
+    margin-top: 8px;
+    display: flex;
+    gap: 15px;
+}
+
+.ft-sociales a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.social-fb {
+    color: var(--azul-400) !important;
+}
+
+.social-fb:hover {
+    color: var(--blanco) !important;
+}
+
+.social-tk {
+    color: var(--blanco) !important;
+}
+
+.social-tk:hover {
+    color: var(--azul-400) !important;
+}
+
+/* BARRA INFERIOR DEL FOOTER */
 .ft-bottom {
     background: #061229;
     padding: 1.5rem 2rem;
